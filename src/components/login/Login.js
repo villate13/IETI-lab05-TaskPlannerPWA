@@ -20,7 +20,14 @@ class Login extends Component {
         this.handleLogin = this.handleLogin.bind(this);
     }
 
+
+    
+
     render() {
+        if(localStorage.isLoggedIn) {
+            window.location.replace("/home")
+        }
+        
         return (
             <Fragment>
                 <CssBaseline />

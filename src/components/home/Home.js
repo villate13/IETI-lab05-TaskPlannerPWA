@@ -51,7 +51,9 @@ class Home extends Component {
         // GUARDANDO DATOS
         localStorage.setItem('items', JSON.stringify(this.props.items));
 
-
+        if(this.state.isLoggedIn === false || this.state.isLoggedIn === undefined) {
+            window.location.replace("/login")
+        }
 
 
         return (
