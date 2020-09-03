@@ -55,6 +55,8 @@ class App extends Component {
     });
     if (ans) {
       window.location.replace("/home")
+    } else {
+      window.location.replace("/")
     }
 
   }

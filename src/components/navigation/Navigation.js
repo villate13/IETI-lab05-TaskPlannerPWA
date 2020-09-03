@@ -39,7 +39,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+function handleLogout() {
+    console.log("Entro a cerrar sesion");
+    if (localStorage.isLoggedIn) {
+        localStorage.clear();
+        window.location.replace("/")
 
+    } else {
+        console.log("Sin iniciar");
+    }
+
+};
 
 
 export default function TemporaryDrawer() {
@@ -59,6 +69,7 @@ export default function TemporaryDrawer() {
         setState({ ...state, [anchor]: open });
     };
 
+    
     const list = (anchor) => (
         <div
             className={clsx(classes.list, {
@@ -79,7 +90,7 @@ export default function TemporaryDrawer() {
                         />
                     </ListItemAvatar>
                     <ListItemText primary="ECI" secondary="eci@escuela.co" />
-                    
+
                 </ListItem>
             </List>
             <Divider />
@@ -91,7 +102,7 @@ export default function TemporaryDrawer() {
             </List>
             <Divider />
             <List>
-                <ListItem button component={Link} to="/">
+                <ListItem button onClick={handleLogout.bind(this)}>
                     <ListItemIcon><ExitToAppIcon /></ListItemIcon>
                     <ListItemText primary="Logout" />
                 </ListItem>
@@ -108,7 +119,7 @@ export default function TemporaryDrawer() {
             </Drawer>
         </div>;
     } else {
-        buttons = <Button color="inherit">Login</Button>
+        buttons = <Button component={Link} to="/login" color="inherit">Login</Button>
     }
 
     return (
@@ -128,4 +139,6 @@ export default function TemporaryDrawer() {
 
         </div>
     );
+
+   
 }
