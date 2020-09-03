@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
 import './App.css';
@@ -14,46 +14,49 @@ localStorage.pd = "v13";
 class App extends Component {
 
   constructor(props) {
-      super(props);
-      this.state = {isLoggedIn: localStorage.isLoggedIn }
-      this.handleLoginApp = this.handleLoginApp.bind(this);
+    super(props);
+    this.state = { isLoggedIn: localStorage.isLoggedIn }
+    this.handleLoginApp = this.handleLoginApp.bind(this);
   }
 
   render() {
-      
-
-      const LoginView = () => (
-          <Login funct={this.handleLoginApp.bind(this)}/>
-      );
-
-      const HomeView = () => (
-          <Home />
-      );
 
 
-      return (
-          <Router>
-              <div className="App">
-                  <Navigation />                 
+    const LoginView = () => (
+      <Login funct={this.handleLoginApp.bind(this)} />
+    );
 
-                  <div>
-                      <Route path="/home" component={HomeView} />
-                      <Route exact path="/" component={LoginView} />
-                  </div>
-              </div>
-          </Router>
+    const HomeView = () => (
+      <Home />
+    );
+
+
+    return (
+
+      <Router>
+        <div className="App">
+          <Navigation />
+          <Switch>
+            <Route exact path="/" component={LoginView} />
+            <Route exact path="/login" component={LoginView} />
+            <Route path="/home" component={HomeView}/>
+          </Switch>
+        </div>
+      </Router>
+
+    
       );
   }
 
   handleLoginApp(ans) {
-      localStorage.isLoggedIn = ans;
-      this.setState({
-          isLoggedIn: ans
-      });
-      if(ans){
-          window.location.replace("/home")
-      }
-      
+    localStorage.isLoggedIn = ans;
+    this.setState({
+      isLoggedIn: ans
+    });
+    if (ans) {
+      window.location.replace("/home")
+    }
+
   }
 
 

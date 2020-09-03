@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import CardTask from './CardTask';
-import { Card } from '@material-ui/core';
 import { TodoCard } from './TodoCard';
 import './Home.css'
 
@@ -52,14 +50,6 @@ class Home extends Component {
         localStorage.setItem('items', JSON.stringify(this.props.items));
         
 
-        const CardView = () => (
-            // <Login funct={this.handleLoginApp.bind(this)}/>
-            <CardTask />
-        );
-
-        // const TodoAppView = () => (
-        //     <TodoApp />
-        // );
 
 
         return (
