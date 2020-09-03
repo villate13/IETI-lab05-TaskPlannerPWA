@@ -9,54 +9,59 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isLoggedIn: localStorage.isLoggedIn,
-        items:[
-            {
-                "description": "Implement login view ",
-                "responsible": {
-                    "name": "Santiago Carrillo",
-                    "email": "sancarbar@gmail"
+        this.state = {
+            isLoggedIn: localStorage.isLoggedIn,
+            items: [
+                {
+                    "description": "Implement login view ",
+                    "responsible": {
+                        "name": "Santiago Carrillo",
+                        "email": "sancarbar@gmail"
+                    },
+                    "status": "ready",
+                    "dueDate": 156464645646
                 },
-                "status": "ready",
-                "dueDate": 156464645646
-            },
-            {
-                "description": "Implement login controller",
-                "responsible": {
-                    "name": "ECI",
-                    "email": "seci@gmail"
+                {
+                    "description": "Implement login controller",
+                    "responsible": {
+                        "name": "ECI",
+                        "email": "seci@gmail"
+                    },
+                    "status": "error",
+                    "dueDate": 156464645646
                 },
-                "status": "error",
-                "dueDate": 156464645646
-            },
-            {
-                "description": "Facebook integration ",
-                "responsible": {
-                    "name": "Sergio",
-                    "email": "sergi@mail"
-                },
-                "status": "pending",
-                "dueDate": 156464645646
-            }
+                {
+                    "description": "Facebook integration ",
+                    "responsible": {
+                        "name": "Sergio",
+                        "email": "sergi@mail"
+                    },
+                    "status": "pending",
+                    "dueDate": 156464645646
+                }
 
-        ]};
+            ]
+        };
     }
 
     render() {
 
-        
+
 
         // GUARDANDO DATOS
         localStorage.setItem('items', JSON.stringify(this.props.items));
-        
+
 
 
 
         return (
             <Fragment>
-                <div className="layout">
-                    <TodoCard items={this.state.items} />
+                <div className="div_center">
+                    <div className="layout">
+                        <TodoCard items={this.state.items} />
+                    </div>
                 </div>
+
             </Fragment>
         );
 

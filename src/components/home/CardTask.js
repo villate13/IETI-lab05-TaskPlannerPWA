@@ -20,8 +20,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 1000,
-        padding: 10,
+        maxWidth: 600,
         margin: 20,
     },
     media: {

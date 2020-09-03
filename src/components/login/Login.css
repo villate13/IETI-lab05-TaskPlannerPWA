@@ -1,5 +1,5 @@
 .layout {
-    width: 40%;
+    max-width: 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -19,5 +19,5 @@
 }
 
 .submit {
-    marginTop: 10px;
+    margintop: 10px;
 }
