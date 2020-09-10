@@ -7,8 +7,10 @@ import './App.css';
 import Login from './components/login/Login'
 import Navigation from './components/navigation/Navigation'
 import Home from './components/home/Home';
+import NewTask from './components/home/NewTask';
 
-localStorage.user = "villate";
+localStorage.user = "ECI";
+localStorage.email = "eci@escuela.co";
 localStorage.pd = "v13";
 
 class App extends Component {
@@ -22,6 +24,53 @@ class App extends Component {
   render() {
 
 
+    const items = [
+      {
+        "description": "Implement login view ",
+        "responsible": {
+          "name": "ECI",
+          "email": "eci@escuela.co"
+        },
+        "status": "ready",
+        "dueDate": 156464645646
+      },
+      {
+        "description": "Implement login controller",
+        "responsible": {
+          "name": "ECI",
+          "email": "eci@escuela.co"
+        },
+        "status": "done",
+        "dueDate": 1581066323
+      },
+      {
+        "description": "Facebook integration ",
+        "responsible": {
+          "name": "ECI",
+          "email": "eci@escuela.co"
+        },
+        "status": "progress",
+        "dueDate": 1588871490
+      },
+      {
+        "description": "Login integration ",
+        "responsible": {
+          "name": "ECI",
+          "email": "eci@escuela.co"
+        },
+        "status": "ready",
+        "dueDate": 1597079490
+      }
+
+    ];
+
+    if(!this.state.isLoggedIn){
+      // GUARDANDO DATOS
+      localStorage.setItem('items', JSON.stringify(items));
+    }
+    
+    
+
     const LoginView = () => (
       <Login funct={this.handleLoginApp.bind(this)} />
     );
@@ -29,6 +78,11 @@ class App extends Component {
     const HomeView = () => (
       <Home />
     );
+
+    const NewTaskView = () => (
+      <NewTask />
+    );
+
 
 
     return (
@@ -39,13 +93,14 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LoginView} />
             <Route exact path="/login" component={LoginView} />
-            <Route path="/home" component={HomeView}/>
+            <Route path="/home" component={HomeView} />
+            <Route path="/new" component={NewTaskView} />
           </Switch>
         </div>
       </Router>
 
-    
-      );
+
+    );
   }
 
   handleLoginApp(ans) {
