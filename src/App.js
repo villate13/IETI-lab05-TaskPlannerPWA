@@ -8,9 +8,11 @@ import Login from './components/login/Login'
 import Navigation from './components/navigation/Navigation'
 import Home from './components/home/Home';
 import NewTask from './components/home/NewTask';
+import UserProfile from './components/profile/UserProfile';
 
 localStorage.user = "ECI";
 localStorage.email = "eci@escuela.co";
+localStorage.name = "Juan Villate";
 localStorage.pd = "v13";
 
 class App extends Component {
@@ -83,6 +85,10 @@ class App extends Component {
       <NewTask />
     );
 
+    const ProfileView = () => (
+      <UserProfile />
+    );
+    
 
 
     return (
@@ -95,6 +101,7 @@ class App extends Component {
             <Route exact path="/login" component={LoginView} />
             <Route path="/home" component={HomeView} />
             <Route path="/new" component={NewTaskView} />
+            <Route path="/profile" component={ProfileView} />
           </Switch>
         </div>
       </Router>

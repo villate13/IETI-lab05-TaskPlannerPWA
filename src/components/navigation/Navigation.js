@@ -81,7 +81,7 @@ export default function TemporaryDrawer() {
         >
 
             <List>
-                <ListItem button>
+                <ListItem button component={Link} to="/profile">
                     <ListItemAvatar>
                         <Avatar
                             alt="AVATAR"
