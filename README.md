@@ -20,8 +20,21 @@ Debes seguir el C√≥digo de honor del ingeniero de sistemas para defender el est√
 
 ### PARTE I
 
+![evidencia1](https://github.com/villate13/IETI-lab05-TaskPlannerPWA/blob/lab05/src/img/lab05-navegador-login.png)
+
+![evidencia2](https://github.com/villate13/IETI-lab05-TaskPlannerPWA/blob/lab05/src/img/lab05-navegador-home.png)
 
 ### PARTE II
+
+![evidencia1mobile](https://github.com/villate13/IETI-lab05-TaskPlannerPWA/blob/lab05/src/img/lab05-mobile-1.jpeg)
+
+![evidencia2Mobile](https://github.com/villate13/IETI-lab05-TaskPlannerPWA/blob/lab05/src/img/lab05-mobile-2.jpeg)
+
+![evidencia3Mobile](https://github.com/villate13/IETI-lab05-TaskPlannerPWA/blob/lab05/src/img/lab05-mobile-3.jpeg)
+
+
+
+
 
 
 
